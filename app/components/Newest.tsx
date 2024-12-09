@@ -21,13 +21,7 @@ async function getData() {
 
 const Newest = async () => {
 
-    let id;
-
     const data = await getData() as ProductSimplified[];
-
-    if (data) {
-        id = await data[0];
-    }
 
     return (
         <div className="bg-white">

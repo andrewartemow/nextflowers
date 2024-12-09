@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useShoppingCart } from 'use-shopping-cart'
 
 import { Button } from '@/components/ui/button'
@@ -15,7 +15,7 @@ interface ProductCart {
     id: number
 }
 
-const CheckoutNow = ({ name, description, price, currency, image, price_id, id }: ProductCart) => {
+const CheckoutNow = ({ price_id }: ProductCart) => {
 
     const { checkoutSingleItem, clearCart } = useShoppingCart();
     // const product = {
@@ -26,8 +26,6 @@ const CheckoutNow = ({ name, description, price, currency, image, price_id, id }
     //     image: image,
     //     price_id,
     // }
-
-    const stringId = id.toString();
 
     return (
         <Button variant="secondary" onClick={() => {

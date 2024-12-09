@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { SyntheticEvent } from 'react'
 
 import { useShoppingCart } from 'use-shopping-cart'
 
@@ -17,7 +17,7 @@ const ShoppingCartModal = () => {
 
     const { cartCount, shouldDisplayCart, cartDetails, totalPrice, handleCartClick, removeItem, redirectToCheckout } = useShoppingCart()
 
-    async function handleCheckoutClick(event: any) {
+    async function handleCheckoutClick(event: SyntheticEvent) {
         event.preventDefault();
         try {
             const result = await redirectToCheckout()
